@@ -63,9 +63,7 @@ function _getProfileAndCodec(codecs) { // @arg CodecString - "mp4a.40.2, avc1.4d
         var codec = codecArray[i].trim();
 
         if (/avc1/.test(codec)) {
-            var detail = codec.slice(5); // "avc1.42c01e" -> "42c01e"
-
-            return H264Profile.getProfile(detail) + " " + H264Profile.getLevel(detail);
+            return H264Profile.getProfile(codec) + " " + H264Profile.getLevel(codec);
         }
     }
     return "";

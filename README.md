@@ -24,10 +24,8 @@ for (var i = 0, iz = codecArray.length; i < iz; ++i) {
     var codec = codecArray[i].trim();
 
     if (/avc1/.test(codec)) {
-        var detail = codec.slice(5); // "avc1.42c01e" -> "42c01e"
-
-        console.info( H264Profile.getProfile(detail) ); // -> "Base";
-        console.info( H264Profile.getLevel(detail)   ); // -> "3.0";
+        console.info( H264Profile.getProfile(codec) ); // -> "Base";
+        console.info( H264Profile.getLevel(codec)   ); // -> "3.0";
     }
 }
 
