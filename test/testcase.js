@@ -22,18 +22,6 @@ if (IN_BROWSER || IN_NW || IN_EL || IN_WORKER || IN_NODE) {
         testH264Profile,
     ]);
 }
-if (IN_BROWSER || IN_NW || IN_EL) {
-    test.add([
-    ]);
-}
-if (IN_WORKER) {
-    test.add([
-    ]);
-}
-if (IN_NODE) {
-    test.add([
-    ]);
-}
 
 // --- test cases ------------------------------------------
 function testH264Profile(test, pass, miss) {
@@ -47,6 +35,14 @@ function testH264Profile(test, pass, miss) {
             6: _getProfileAndCodec("mp4a.40.2, avc1.4d401e") === "Main 3.0",
             7: _getProfileAndCodec("mp4a.40.2, avc1.4d401f") === "Main 3.1",
             8: _getProfileAndCodec("mp4a.40.2, avc1.640029") === "High 4.1",
+
+            11: H264Profile.getProfile(66)  === "Base",
+            15: H264Profile.getProfile(77)  === "Main",
+            18: H264Profile.getProfile(100) === "High",
+
+            21: H264Profile.getLevel(0x0C) === "1.2",
+            28: H264Profile.getLevel(0x1E) === "3.0",
+            29: H264Profile.getLevel(0x33) === "5.1",
         };
 
     if ( /false/.test(JSON.stringify(result)) ) {
