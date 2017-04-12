@@ -1,6 +1,6 @@
 {
   "name": "uupaa.h264profile.js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "H264(AVC) Profile and Level detection.",
   "url": "https://github.com/uupaa/H264Profile.js",
   "keywords": ["AVC", "H264", "Profile", "Level", "uupaa", "WebModule", "Unstable"],
